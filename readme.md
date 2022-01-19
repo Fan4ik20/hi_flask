@@ -14,7 +14,7 @@ It may vary, depending on the OS
 - Init db via command `flask init_db`
 - Run flask app via command `flask run`  
 Or you can start docker container via commands:
-- `docker build --tag{your_tag} hi_flask`
+- `docker build --tag{your_tag} .`
 - `docker start -d -p 5000:5000 --name{your_name} -e FLASK_APP=main {your_tag}`
 - `docker exec -t -i {your_tag} bash`
 - `flask init_db`
