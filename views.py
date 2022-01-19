@@ -9,7 +9,7 @@ user_manager = UserManager()
 
 
 @app.route('/', methods=['GET', 'POST'])
-def show_index():
+def show_welcome_page():
     if request.method == 'POST':
         name = request.form.get('firstName')
         surname = request.form.get('lastName')
