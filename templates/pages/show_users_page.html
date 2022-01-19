@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All Users
+{% endblock %}
+
+{% block content %}
+    <h1>Users list:</h1>
+    {% for user in users %}
+        <h3>
+            {{ user.User.name }} {% if user.User.surname %}{{ user.User.surname }}{% endif %}
+        </h3>
+    {% else %}
+        <h3>There's no one here yet.</h3>
+    {% endfor %}
+
+    <a href="{{ url_for('show_welcome_page') }}">Back to welcome page</a>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Welcome!
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        {% if first_name %}
+            <h1>
+                Hello {{ first_name }} {% if last_name %}{{ last_name }}{% endif %}
+            </h1>
+            {% if already_visited %}
+                <h3>Nice to meet you again!</h3>
+            {% else %}
+                <h3>I hope to see you again!</h3>
+            {% endif %}
+            <a href="{{ url_for('show_welcome_page') }}">Enter data again</a>
+            <br>
+        {% else %}
+            <h1>Hello, User</h1>
+            <h3>Please, enter some information about you :)</h3>
+
+            <form method="post">
+                <label for="firstName">First name:</label><br>
+                <input required type="text" id="firstName"
+                       name="firstName"><br>
+                <label for="lastName">Last name:</label><br>
+                <input type="text" id="lastName" name="lastName"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        {% endif %}
+        <br>
+        <a href="{{ url_for('show_users') }}">All users who visited the site</a>
+    </div>
+{% endblock %}
