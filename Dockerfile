@@ -3,6 +3,7 @@
 FROM python:3.9-slim-buster
 
 WORKDIR /app
+ENV FLASK_APP=main.py
 
 COPY requirements.txt requirements.txt
 
