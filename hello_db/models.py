@@ -5,7 +5,7 @@ HiBase = declarative_base()
 
 
 class User(HiBase):
-    __tablename__ = 'user'
+    __tablename__ = 'HiFlaskUser'
 
     id = Column(Integer, primary_key=True)
 
